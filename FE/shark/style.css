@@ -60,19 +60,22 @@ aside {
   font-size: 1.5rem;
 }
 .messages {
-  padding: 5rem;
+  padding: 2rem;
+  overflow-y:scroll;
+  width: 390px;
+  height: 70%;
 }
 .item {
-  padding: 20px;
+  padding: 15px;
   border-radius: 16px;
-  width: 450px;
-  background: gold;
+  width: 300px;
+  background-color:rgb(238, 231, 231);
   display: grid;
-  grid-template-columns: 100px auto 100px;
+  grid-template-columns: 90px 150px auto;
 }
 .avatar-container {
   line-height: 0;
-  width: 92px;
+  width: 85px;
   aspect-ratio: 1;
   position: relative;
 }
@@ -93,12 +96,35 @@ aside {
   bottom: 5px;
 }
 .last-message {
-  width: 250px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.5;
+  font-family: 'Times New Roman', Times, serif;
 }
-
+.last-message_bold {
+    font-weight: bolder;
+    font-size: 17px;
+}
+.last-message_gray {
+    color: grey;
+}
+.last-message_normal {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.indicator {
+    border: 1px solid cornflowerblue;
+    background-color:cornflowerblue;
+    position:relative;
+    width:fit-content;
+    height:fit-content;
+    border-radius: 100px;
+    padding: 5px;
+    font-size: 14px;
+    color: white;
+    top: 30px;
+}
 .item:not(:last-child) {
   margin-bottom: 1rem;
 }
