@@ -1,0 +1,54 @@
+_____________Задание 1_________________
+
+1) Например, нам нужно написать метод, которые возвращает квадрат нечетного числа 
+	if (x>=0) && (x %% != 0) {
+		System.out.println(x * x);
+		}
+		
+2) if (day == 'Saturday') || (day == 'Sunday') {
+		System.out.println("Ура, сегодня выходной!!");
+		}
+   if (weather == 'Hot') || (weather == 'Rain') {
+		System.out.println("Не лучшее время для лыж...");
+		} 
+		
+		
+	
+   if (!(login == 'User234')) {
+		System.out.println("Error login!");
+		}
+   if (!(day == 'Saturday') || (day == 'Sunday')) {
+		System.out.println("Пришло время поработать...");
+
+
+
+
+
+
+
+_____________Задание 2_________________
+
+
+import java.util.Scanner;
+public class Main
+{
+    public static void ParImpar (int x) {
+        if ((x >= 0) && (x <= 100)) {
+            if (x % 2 == 0) {
+                System.out.println("Вы ввели четное число");
+            }
+            else {
+                System.out.println("Вы ввели нечетное число");
+            }
+        }
+        else {
+            System.out.println("Пожалуйста, введите число в диапазоне от 0 до 100... ");
+        }
+    }
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Введите число в диапазоне от 0 до 100: ");
+		int r = scanner.nextInt();
+		ParImpar(r);
+	}
+}

@@ -1,0 +1,46 @@
+_____________Задание 1_________________
+
+
+public class Main
+{
+    public static void NumbersMethod (int x, int y) {
+        if (x == y) {
+            System.out.println((x+y)*2);
+        }
+        else {
+            System.out.println(x+y);
+        }
+    }
+	public static void main(String[] args) {
+		int a = 8;
+		int b = 25;
+		int c = 25;
+		NumbersMethod(a, b);
+		NumbersMethod(b, c);
+	}
+}
+
+
+_____________Задание 2_________________
+
+import java.util.Scanner;
+public class Main
+{
+    public static void NumbersType (int x) {
+        if (x < 0) {
+            System.out.println("Вы ввели отрицательное число");
+        }
+        if (x == 0) {
+            System.out.println("Вы ввели ноль");
+        }
+        if (x > 0) {
+            System.out.println("Вы ввели положительное число");
+        }
+    }
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Введите число: ");
+		int r = scanner.nextInt();
+		NumbersType(r);
+	}
+}

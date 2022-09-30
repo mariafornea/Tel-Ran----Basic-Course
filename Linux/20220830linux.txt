@@ -1,0 +1,105 @@
+localhost:~# ls
+bench.py    hello.c     hello.js    readme.txt
+localhost:~# cd ..
+localhost:/# ls
+bin    etc    lib    mnt    proc   run    srv    tmp    var
+dev    home   media  opt    root   sbin   sys    usr
+localhost:/# cd /tmp
+localhost:/tmp# touch maria.txt
+localhost:/tmp# ls
+maria.txt
+localhost:/tmp# echo "bin etc lib mnt proc" > maria.txt
+localhost:/tmp# echo maria.txt
+maria.txt
+localhost:/tmp# cat maria.txt
+bin etc lib mnt proc
+localhost:/tmp# MYVAR=$(date)
+localhost:/tmp# echo $MYVAR
+Tue Aug 30 13:00:28 UTC 2022
+localhost:/tmp# echo $MYVAR >> maria.txt
+localhost:/tmp# cat maria.txt
+bin etc lib mnt proc
+Tue Aug 30 13:00:28 UTC 2022
+localhost:/tmp# history
+   0 ls
+   1 cd ..
+   2 ls
+   3 cd /tmp
+   4 touch maria.txt
+   5 ls
+   6 echo "bin etc lib mnt proc" > maria.txt
+   7 echo maria.txt
+   8 cat maria.txt
+   9 MYVAR=$(date)
+  10 echo $MYVAR
+  11 echo $MYVAR >> maria.txt
+  12 cat maria.txt
+  13 history
+localhost:/tmp# df -h
+Filesystem                Size      Used Available Use% Mounted on
+/dev/root                 4.9G      2.3G      2.6G  47% /
+devtmpfs                 91.3M         0     91.3M   0% /dev
+tmpfs                    91.4M      8.0K     91.4M   0% /run
+none                     91.4M         0     91.4M   0% /dev/shm
+localhost:/tmp# df -h | awk'{print $3}'
+sh: awk{print $3}: not found
+localhost:/tmp# df  -h|awk '{print $5}'
+Use%
+47%
+0%
+0%
+0%
+localhost:/tmp# df -h|awk '{print $3}'
+Used
+2.3G
+0
+8.0K
+0
+localhost:/tmp# df -h|awk '{print $3}' >> maria.txt
+localhost:/tmp# cat maria.txt
+bin etc lib mnt proc
+Tue Aug 30 13:00:28 UTC 2022
+Used
+2.3G
+0
+8.0K
+0
+localhost:/tmp# df -h|awk '{print $3}' >> maria.txt
+localhost:/tmp# cat maria.txt
+bin etc lib mnt proc
+Tue Aug 30 13:00:28 UTC 2022
+Used
+2.3G
+0
+8.0K
+0
+localhost:/tmp# ls -l maria.txt
+-rw-r--r--    1 root     root            69 Aug 30 13:13 maria.txt
+localhost:/tmp# chmod 666 maria.txt
+localhost:/tmp# ls -l maria.txt
+-rw-rw-rw-    1 root     root            69 Aug 30 13:13 maria.txt
+localhost:/tmp# history
+   0 ls
+   1 cd ..
+   2 ls
+   3 cd /tmp
+   4 touch maria.txt
+   5 ls
+   6 echo "bin etc lib mnt proc" > maria.txt
+   7 echo maria.txt
+   8 cat maria.txt
+   9 MYVAR=$(date)
+  10 echo $MYVAR
+  11 echo $MYVAR >> maria.txt
+  12 cat maria.txt
+  13 history
+  14 df -h
+  15 df -h | awk'{print $3}'
+  16 df  -h|awk '{print $5}'
+  17 df -h|awk '{print $3}'
+  18 df -h|awk '{print $3}' >> maria.txt
+  19 cat maria.txt
+  20 ls -l maria.txt
+  21 chmod 666 maria.txt
+  22 ls -l maria.txt
+  23 history

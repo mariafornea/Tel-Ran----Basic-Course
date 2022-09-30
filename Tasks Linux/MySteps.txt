@@ -1,0 +1,27 @@
+﻿1. Создаю репозиторий на GITHUB ---> tasks_linux
+2. Открываю bash, в папке tmp создаю новую папку TLinux_repo, захожу в нее
+   (cd tmp; mkdir TLinux_repo; cd TLinux_repo)
+3. Инициализирую репозиторий:
+   echo "# tasks_linux" >> README.md
+   git init
+   git add README.md
+   git commit -m 'first commit'
+   git branch -M master
+   git remote add origin git@github.com:mariafornea/tasks_linux.git
+4. Создаю и сразу открываю в редакторе скрипт-файл nano script.sh
+5. #!/bin/basch                                    #шебанг, без него никак
+   RUN=1                                           #инициализирую счетчик
+   while [ $RUN -le 5 ]                            #условие, цикл будет исполнятся 5 раз
+   do
+   touch file$RUN.txt                              #первая команда на создание файла
+   echo "Empty file" $RUN >> file$RUN.txt          #вторая команда на запись в файл
+   ((RUN++))                                       #итерация
+   done
+6. Сохраняю скрипт (Ctrl+X). Можно конечно еще сделать его исполняем (chmod u+x script.sh), но в моем случае после команды ls,  мой скрипт зеленый, а значит исполняемый, так что не буду трать на это время.
+7. Запускаю скрипт ./script.sh
+8. Сообщение об ошибке не появилось, значит все должно работать. Проверяю содержимое папки -> ls
+9. Теперь помимо файла README.md и моего скрипта, появилось еще 5 файлов file1.txt .. file5.txt
+10. Открываю любой из них с помощью редактора, например nano file3.txt
+11. Убеждаюсь, что в нем есть строка Empty file 3, и выхожу из редактора.
+12. Теперь осталось все это добавить в очередь на коммит (git add .), закоммитить (git commit -m 'добавила скрипт') и запушить (git push -u origin master)
+13. Проверяю свой репозиторий на GITHUB, все есть.

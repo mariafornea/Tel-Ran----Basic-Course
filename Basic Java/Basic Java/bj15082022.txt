@@ -1,0 +1,54 @@
+Задание 1_________________
+
+import java.util.Scanner;
+public class Main
+{
+   
+    public static double Inch (double x) {
+        double result = x *  0.0254;
+        return result;
+    }
+	public static void main(String[] args) {
+	    Scanner scanner = new Scanner(System.in);
+		System.out.println("Введите число в дюймах: ");
+		double a = scanner.nextInt();
+		double metr = Inch(a);
+		System.out.println(a + " дюйма = " + metr + " м");
+	}
+	
+}
+
+Задание 2___________________
+
+import java.util.Scanner;
+public class Main
+{
+   
+    public static double Year (double x) {
+        double result = x * 0.000002;
+        return result;
+    }
+    public static double Day (double x) {
+        double result = x * 0.0007;
+        return result;
+    }
+	public static void main(String[] args) {
+	    Scanner scanner = new Scanner(System.in);
+		System.out.println("Введите минуты: ");
+		double a = scanner.nextInt();
+		double year = Year(a);
+		System.out.println(a + " минут = " + year + " года");
+		double day = Day(a);
+		System.out.println(a + " минут = " + year + " сутки");
+	}
+	
+}
+
+Задание 3______________________
+
+ int x = 20; //должно быть объявление переменной икс = 20
+    x = x + 50; //должно увеличить икс на 50
+     int u = 100; //должно быть объявление переменной u = 100
+        int m = u * 2; // //должно быть объявление переменной m в два раза больше u
+        double k = (1 / 5) * 1000; //исправьте, чтобы результат не обнулялся.
+
