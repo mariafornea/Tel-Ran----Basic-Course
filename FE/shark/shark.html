@@ -15,14 +15,100 @@
   <body>
     <div class="wrapper">
       <aside></aside>
-      <div class="inbox"></div>
-
-      <div class="chat">
-        <div class="header">
-          <div class="header__logo">
+      <div class="inbox">
+        <div class="inbox__header">
+          <div class="inbox__header_logo">
             <div>Inbox</div>
             <div>+</div>
           </div>
+        </div>
+        <div class="inbox__switcher">
+          <div class="inbox__switcher_bold">General</div>
+          <div class="inbox__swithcer_gray">Total</div>
+        </div>
+        <div class="inbox__messages">
+          <div class="item">
+            <div class="image">
+              <figure class="avatar-container">
+                <img src="img/michael.jpg" alt="Michael.B" class="avatar"/>
+                <div class="online"></div>
+              </figure>
+            </div>
+            <div class="info">
+               <ul class="last-message">
+                  <li class="last-message_bold">Michael.B</li>
+                  <li class="last-message_gray">Project manager</li>
+                  <li class="last-message_normal">Sent you the file</li>
+                </ul>
+            </div>
+                <div class="indicator">
+                 <figure> +2 </figure>
+                </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <figure class="avatar-container">
+                <img src="img/katie.jpg" alt="Katie.W" class="avatar"/>
+                <div class="online"></div>
+              </figure>
+            </div>
+            <div class="info">
+                <ul class="last-message">
+                   <li class="last-message_bold">Katie.W</li>
+                    <li class="last-message_gray">Middle designer</li>
+                    <li class="last-message_normal">See you tomorrow. Have a good day!</li>
+                </ul>
+            </div>
+            <div class="indicator">
+                <figure> +3 </figure>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <figure class="avatar-container">
+                <img src="img/arnold.jpg" alt="Arnold.J" class="avatar"/>
+              </figure>
+            </div>
+            <div class="info">
+                <ul class="last-message">
+                  <li class="last-message_bold">Arnold.J</li>
+                  <li class="last-message_gray">UI designer</li>
+                  <li class="last-message_normal">Hi&#128075;I checked the layout again</li>
+                </ul>
+            </div>
+          </div>
+          <hr>
+          <div class="item">
+            <div class="image">
+              <figure class="avatar-container">
+                <img src="img/fannie.jpg" alt="Fannie.K" class="avatar"/>
+              </figure>
+            </div>
+            <div class="info">
+                <ul class="last-message">
+                  <li class="last-message_bold">Fannie.K</li>
+                  <li class="last-message_gray">HR manager</li>
+                  <li class="last-message_normal">okay!</li>
+                </ul>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <figure class="avatar-container">
+                <img src="img/isaac.png" alt="Isaac.A" class="avatar"/>
+              </figure>
+            </div>
+            <div class="info">
+                <ul class="last-message">
+                  <li class="last-message_bold">Isaac.A</li>
+                  <li class="last-message_gray">SMM manager</li>
+                  <li class="last-message_normal">I don't think we're going to finish</li>
+                </ul>
+            </div>
+          </div>
+      </div>
+      <div class="chat">
+        <div class="chat__header">
           <div class="header__item">
             <div>
               <figure class="image-container">
@@ -39,128 +125,16 @@
           </div>
           <div class="search">
             <input class="search__input" type="text" placeholder="Search..." />
-
             <button class="search__button">
               <i class="las la-search"></i>
             </button>
             <img src="img/voice.svg" class="search__add">
             <img src="img/camera.svg" class="search__add">
           </div>
-        </div>
-
-        <div class="messages">
-          <div class="inbox-switcher">
-            <div class="inbox-switcher_bold">General</div>
-            <div class="inbox-swithcer_gray">Total</div>
           </div>
-          <div class="item">
-            <div class="image">
-              <figure class="avatar-container">
-                <img
-                  src="img/michael.jpg"
-                  alt="Michael.B"
-                  class="avatar"
-                />
-
-                <div class="online"></div>
-              </figure>
-            </div>
-
-            <div class="info">
-                    <ul class="last-message">
-                      <li class="last-message_bold">Michael.B</li>
-                      <li class="last-message_gray">Project manager</li>
-                      <li class="last-message_normal">Sent you the file</li>
-                    </ul>
-              </div>
-                <div class="indicator">
-                 <figure> +2 </figure>
-                </div>
-          </div>
-          <div class="item">
-            <div class="image">
-              <figure class="avatar-container">
-                <img
-                  src="img/katie.jpg"
-                  alt="Katie.W"
-                  class="avatar"
-                />
-
-                <div class="online"></div>
-              </figure>
-            </div>
-
-            <div class="info">
-                    <ul class="last-message">
-                      <li class="last-message_bold">Katie.W</li>
-                      <li class="last-message_gray">Middle designer</li>
-                      <li class="last-message_normal">See you tomorrow. Have a good day!</li>
-                    </ul>
-              </div>
-                <div class="indicator">
-                 <figure> +3 </figure>
-                </div>
-          </div>
-          <div class="item">
-            <div class="image">
-              <figure class="avatar-container">
-                <img
-                  src="img/arnold.jpg"
-                  alt="Arnold.J"
-                  class="avatar"
-                />
-              </figure>
-              </div>
-            <div class="info">
-                    <ul class="last-message">
-                      <li class="last-message_bold">Arnold.J</li>
-                      <li class="last-message_gray">UI designer</li>
-                      <li class="last-message_normal">Hi&#128075;I checked the layout again</li>
-                    </ul>
-              </div>
-          </div>
-          <hr>
-          <div class="item">
-            <div class="image">
-              <figure class="avatar-container">
-                <img
-                  src="img/fannie.jpg"
-                  alt="Fannie.K"
-                  class="avatar"
-                />
-              </figure>
-              </div>
-            <div class="info">
-                    <ul class="last-message">
-                      <li class="last-message_bold">Fannie.K</li>
-                      <li class="last-message_gray">HR manager</li>
-                      <li class="last-message_normal">okay!</li>
-                    </ul>
-              </div>
-          </div>
-          <div class="item">
-            <div class="image">
-              <figure class="avatar-container">
-                <img
-                  src="img/isaac.png"
-                  alt="Isaac.A"
-                  class="avatar"
-                />
-              </figure>
-              </div>
-            <div class="info">
-                    <ul class="last-message">
-                      <li class="last-message_bold">Isaac.A</li>
-                      <li class="last-message_gray">SMM manager</li>
-                      <li class="last-message_normal">I don't think we're going to finish</li>
-                    </ul>
-              </div>
-          </div>
-        </div>
-
-        <div class="send-block"></div>
+          <div class="chat__content"></div>
+          <div class="sendblock"></div>
       </div>
-
       <div class="panel"></div>
     </div>
   </body>
