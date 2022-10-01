@@ -13,8 +13,79 @@ body {
   grid-template-areas: "aside inbox chat panel";
 }
 aside {
+  border-right: 1px solid lightgray;
   grid-area: aside;
-  background: lightblue;
+  background: white;
+  display: grid;
+  grid-area: "aside__logo aside__menu aside__projects";
+  grid-template-rows: 70px auto 240px;
+}
+.aside__logo {
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 4%;
+  margin-left: 5%;
+}
+.aside__logo img {
+  height: 50px;
+  position: relative;
+}
+.aside__logo_name {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 25px;
+  color:black;
+  margin-top: 7%;
+  margin-left: 10%;
+}
+.aside__menu {
+  border-bottom: 1px solid black;
+  position:relative;
+  margin-top: 10%;
+}
+.aside__menu li, .aside__projects li {
+  list-style: none;
+  margin-left: 10%;
+}
+.aside__menu_item, .aside__projects_item {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 19px;
+  line-height: 2.5;
+  font-weight: bolder;
+  color:#5d5a5a;
+}
+.aside__menu_item_orange {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  line-height: 2.5;
+  border-right: 3px solid orangered;
+  color: rgb(81, 124, 204);
+  font-weight: bold;
+}
+.aside__menu img, .aside__projects img {
+  height: 22px;
+}
+.aside__projects_item {
+  font-size: 18px;
+}
+.aside__projects_title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 17px;
+  font-weight: bolder;
+  color:#5d5a5a;
+  margin-bottom: 2%;
+}
+.aside__projects_button button {
+  border: none;
+  height: 30px;
+  width: 150px;
+  background-color: rgb(238, 231, 231);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+  margin-left: 15%;
+  color: #5d5a5a;
+  font-weight: bolder;
+  cursor: pointer;  
 }
 .inbox {
     grid-area: inbox;
@@ -180,6 +251,7 @@ textarea {
   margin-left: 1%;
   font-family: 'Times New Roman', Times, serif;
   font-size: 17px;
+  cursor:text;
 }
 textarea:active, :focus {
   outline: 0;
@@ -279,6 +351,7 @@ textarea:active, :focus {
   border: none;
   padding: 1rem;
   font-size: 1rem;
+  cursor:text;
 }
 .search__input:focus {
   outline: none;
@@ -287,6 +360,7 @@ textarea:active, :focus {
   background: none;
   border: none;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 .search__add {
     height: 30px;
@@ -305,13 +379,17 @@ textarea:active, :focus {
   border-top:none;
   border-bottom:none;
 }
-.item {
+.item, .item_orange {
   padding: 15px;
   border-radius: 16px;
   width: 300px;
   background-color:rgb(238, 231, 231);
   display: grid;
   grid-template-columns: 90px 150px auto;
+}
+.item_orange {
+  border-left: 3px solid orangered;
+  background-color:rgb(233, 197, 197);
 }
 .avatar-container {
   line-height: 0;
@@ -375,7 +453,7 @@ textarea:active, :focus {
   .panel {
       display: none;
   }
-  .wrapper {
+  .body {
       display: block;
   }
 }
