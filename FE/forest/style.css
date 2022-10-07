@@ -1,0 +1,108 @@
+.wrapper {
+    position: relative;
+    width: max-content;
+    height: max-content;
+    background: #ffffff;
+}
+.wrapper__header {
+    position: absolute;
+    width: 1350px;
+    height: 100px;
+    background-color: #ffffff;
+    left: 2px;
+    top: 0px;
+}
+.wrapper__header_menu {
+    position: absolute;
+    width: 500px;
+    height: 25px;
+    left: 440px;
+    top: 38px;
+    background-color: #ffffff;
+}
+.wrapper__header_menu > button {
+    width: fit-content;
+    left: calc(50% - 25px/2 + 282.5px);
+    top: calc(50% - 25px/2 + 0.5px);
+    border: none;
+    background:none;
+    float: right;
+    cursor: pointer;
+}
+.wrapper__header_menu > ul {
+    list-style:none;
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 0 0;
+    justify-content: space-around;
+}
+.wrapper__header_menu_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100px;
+    height: 24px;
+    left: 0%;
+    top: calc(50% - 24px/2);
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+.wrapper__header_button {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    right: 32px;
+    top: calc(50% - 60px/2);
+}
+.wrapper__header_button > button {
+    width: 200px;
+    height: 60px;
+    border: none;
+    background-color: darkslategray;
+    color: white;
+    text-transform: uppercase;
+}
+.wrapper__header_logo {
+    position: absolute;
+    width: 70.26px;
+    height: 65.1px;
+    left: 146px;
+    top: 18px;
+}
+.wrapper__intro {
+    position: absolute;
+    width: 1350px;
+    height: auto;
+    top: 100px;
+}
+.wrapper__intro img {
+    width: 1350px;
+    height: auto;
+}
+.wrapper__frame {
+    margin-top: -6%;
+    position: absolute;
+    width: 743px;
+    height: 190px;
+    left: 609px;
+    top: 195px;
+    color: white;
+}
+.wrapper__frame span {
+    font-weight:100;
+    font-size: 40px;
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+}
+.wrapper__frame p {
+    font-size: 24px;
+    text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 1px;
+}
+
+
