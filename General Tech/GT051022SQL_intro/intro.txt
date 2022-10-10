@@ -1,0 +1,309 @@
+SQL - декларативный язык программирования, применяемый для создания, модификации и управления данными реляционной базе данных (табличной базе данных), управляемой соответствующей системой управления базами данных. Два факта:
+    * Появился в 1974г.
+    * Разработчики: Дональд Чемберлин, Рэймонд Бойс
+
+
+Важно! Существует 2 разных понятия: 
+    * SQL - собственно SQL
+    * СУБД - система управления базами данных, все что содержит в себе SQL
+SQL - это язык программирования и он используется в СУБД. Сами же СУБД это своего рода диалекты языка SQL. Почти каждая СУБД включает в себя какой-либо дополнительный функционал, расширения и возможности. То есть SQL это язык со своими правилами и стандартами, а СУБД это диалект со своими дополнитльными возможностями, основанный на базе SQL.
+Мы будем изучать MySQL, поскольку он достаточно распространен. Но в целом все СУБД не сильно отличаются друг от друга. У всех них есть одна общая база и составляет она приблизительно 90% всей системы.
+
+
+SQL vs NoSQL
+В последнее время NoSQL набирает всё большую популярность. Чем же он отличается от SQL? SQL это привычная нам табличная форма, а NoSQL это каскадная форма (чем-то похож на код). каскадная форма это когда информация хранится в формате ключ-значение. Хотя NoSQL и набирает популярность, все же SQL более проработанный язык программирования, и по крайней мере ближайшие пару лет будет все еще востребован. Но тут надо быть гибким, возможно нам все равно придется так или иначе столкнуться с NoSQL. К тому же есть некоторые функции, которые достаточно сложно реализовать на SQL, к примеру пост в Facebook. Допустим есть 18 комментариев к посту. Их достаточно сложно хранить в табличной форме. Тут как раз более функционален NoSQL.
+
+Структура
+Таблица SQL состоит из 2 главных атрибутов: поле (или атрибут, столбец) и запись (или строка). Далее 3 важных понятия:
+    * Таблица - источник данных
+    * Запрос - SELECT * FROM <таблица>
+    * Выборка - в рузельтате запроса мы получаем какую-то информацию
+Важно! Сколько бы таблиц не было в одном проекте, у них всегда должно быть хотябы одно общее поле, то есть они должны быть взаимосвязаны.
+Важно! Для MySQL регистр не имеет значения.
+
+
+******************************************************************************************
+Песочница (https://www.programiz.com/sql/online-compiler/) + примеры
+1. SELECT * FROM Costumers;
+    |
+    |
+customer_id	    first_name	    last_name	    age	    country
+1	               John	           Doe	        31	      USA
+2	               Robert	       Luna	        22	      USA
+3	               David	       Robinson	    22	      UK
+4	               John	           Reinhardt	25	      UK
+....
+
+2. SELECT * FROM Orders;
+    |
+    |
+order_id    item	    amount  customer_id
+1	       Keyboard	    400	        4
+2	       Mouse	    300	        4
+3	       Monitor	    12000	    3
+4	       Keyboard	    400	        1
+....
+
+3. SELECT item FROM Orders;
+    |
+    |
+item
+Keyboard
+Mouse
+Monitor
+Keyboard
+Mousepad
+
+4. SELECT item, customer_id FROM Orders;
+    |
+    |
+item	    customer_id
+Keyboard	    4
+Mouse	        4
+Monitor	        3
+Keyboard	    1
+Mousepad	    2
+
+5. SELECT customer_id, item, order_id FROM Orders;
+    |
+    |
+customer_id	        item	    order_id
+4	              Keyboard	        1
+4	              Mouse	            2
+3	              Monitor	        3
+1	              Keyboard	        4
+2	              Mousepad	        5
+
+5. SELECT status FROM Shippings;
+    |
+    |
+status
+Pending
+Pending
+Delivered
+Pending
+Delivered
+
+6. SELECT first_name, last_name, age FROM Costumers;
+    |
+    |
+first_name	last_name	age
+John	      Doe	    31
+Robert	      Luna	    22
+David	      Robinson	22
+John	      Reinhardt	25
+Betty	      Doe	    28
+
+Важно! SELECT first_name, last_name, age FROM Costumers; -- это конструкция в одну линию выглядит не очень аккуратно. Рекомендуется все же пользоваться code style. Хотя регистр и не влияет на выполнение запроса, все же есть несколько правил для того, чтобы код выглядил читабельным. Например, команды (ключевые слова) лучше писать в верхнем регистре, а названия полей и какие-то дополнительные критерии - в маленьком. Дальше, лучше разделять запрос на нескольно строчек. Например:
+    SELECT 
+        first_name,
+        last_name,
+        age 
+    FROM Costumers;
+Всегда перечисления полей выносятся на отдельную строку, даже если мы хотим вывести все поля (*).
+    SELECT
+        *
+    FROM Costumers;
+Каждое новое ключевое слово идет с новой строки.
+
+
+Выборка
+    SELECT
+        ...     --------  перечисление полей
+    FROM Users
+    WHERE ...   --------  условия
+ ******
+ Синтаксис                      Функционал
+ =, <, >, <>, <=, >=            равен, меньше, больше, неравен, меньше либо равен, больше либо равен
+ BETWEEN, NOT BETWEEN           значение в диапазоне
+ IN, NOT IN                     значение в списке
+ LIKE, NOT LIKE                 значение подходит по маске
+ AND, OR                        логические И, ИЛИ
+ ()                             указание приоритета
+ ******
+1. SELECT 
+	    first_name,
+        last_name,
+        age
+   FROM Customers
+   WHERE age > 25;
+   |
+   |
+first_name	last_name	age
+John	    Doe	        31
+Betty	    Doe	        28
+
+2. SELECT 
+	    first_name,
+        last_name,
+        age
+   FROM Customers
+   WHERE first_name <> "John";
+   |
+   |
+first_name	last_name	age
+Robert	    Luna	    22
+David	    Robinson	22
+Betty	    Doe	        28
+
+3. SELECT 
+	    first_name,
+        last_name,
+        age
+   FROM Customers
+   WHERE first_name <> "John"
+   AND age > 23;
+   |
+   |
+first_name	last_name	age
+Betty	    Doe	        28
+
+4. SELECT 
+	    first_name,
+        last_name,
+        age
+   FROM Customers
+   WHERE age BETWEEN 22 AND 25;
+   |
+   |
+first_name	last_name	age
+Robert	    Luna	    22
+David	    Robinson	22
+John	    Reinhardt	25
+
+5. SELECT 
+	    first_name,
+        last_name,
+        age
+   FROM Customers
+   WHERE age NOT BETWEEN 22 AND 25;
+   |
+   |
+first_name	last_name	age
+John	    Doe	        31
+Betty	    Doe	        28
+
+6. SELECT 
+	    first_name,
+        last_name,
+        age
+   FROM Customers
+   WHERE age NOT BETWEEN 22 AND 25;
+
+   SELECT 
+	    first_name,
+        last_name,
+        age
+   FROM Customers
+   WHERE age BETWEEN 22 AND 25;
+   |
+   |
+first_name	last_name	age
+John	    Doe	        31
+Betty	    Doe	        28
+first_name	last_name	age
+Robert	    Luna	    22
+David	    Robinson	22
+John	    Reinhardt	25
+
+7. SELECT 
+	    first_name,
+        last_name,
+        age
+   FROM Customers
+   WHERE country IN("USA", "UK");
+   |
+   |
+first_name	last_name	age
+John	    Doe	        31
+Robert	    Luna	    22
+David	    Robinson	22
+John	    Reinhardt	25
+
+8. SELECT 
+	    first_name,
+        last_name,
+        age
+   FROM Customers
+   WHERE age NOT IN(22, 23);
+   |
+   |
+first_name	last_name	age
+John	    Doe	        31
+John	    Reinhardt	25
+Betty	    Doe	        28
+
+9. SELECT 
+	    first_name,
+        last_name,
+        age
+   FROM Customers
+   WHERE last_name LIKE "R%";   ----- комментарии(--), множество символов(%), один символ(_);
+   |
+   |
+first_name	last_name	age
+David	    Robinson	22
+John	    Reinhardt	25
+
+10. SELECT 
+	    first_name,
+        last_name,
+        age
+   FROM Customers
+   WHERE last_name LIKE "%e";  
+   |
+   |
+first_name	last_name	age
+John	    Doe	        31
+Betty	    Doe	        28
+
+11. SELECT 
+	    first_name,
+        last_name,
+        age
+   FROM Customers
+   WHERE last_name LIKE "%e%";   ----- здесь требуется чтобы в фамилии просто была буква "e"
+   |
+   |
+first_name	last_name	age
+John	    Doe	        31
+John	    Reinhardt	25
+Betty	    Doe	        28
+
+12. SELECT 
+	    first_name,
+        last_name,
+        age
+   FROM Customers
+   WHERE last_name LIKE "d_%";   ----- здесь требуется чтобы фамилия начиналась на d и после был хоть 1 символ
+   |
+   |
+first_name	last_name	age
+John	    Doe	        31
+Betty	    Doe	        28
+
+13. SELECT 
+	    first_name,
+        last_name,
+        age
+   FROM Customers
+   WHERE last_name LIKE "_o%";   ----- вторая буква в фамилии должна быть "o"
+   |
+   |
+first_name	last_name	age
+John	    Doe	        31
+David	    Robinson	22
+Betty	    Doe	        28
+
+14. SELECT 
+	    first_name,
+        last_name,
+        age
+   FROM Customers
+   WHERE last_name LIKE "_o_";   ----- вторая буква в фамилии должна быть "o" и она должна быть из 3 букв
+   |
+   |
+first_name	last_name	age
+John	    Doe	        31
+Betty	    Doe	        28
+
