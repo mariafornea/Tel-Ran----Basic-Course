@@ -793,9 +793,9 @@ returnSumOfDigits(array3); // 15 */
 // alert( arr ); // [3, 1]
 
 
-function filterRangeInPlace ( arr, a, b ) { // new function
+/* function filterRangeInPlace ( arr, a, b ) { // new function
     arrFiltred = arr.slice(a, b+1);
     return arrFiltred;
 }
 let array = [1, 2, 3, 4, 5, 6];
-console.log(filterRangeInPlace(array, 2, 4));
+console.log(filterRangeInPlace(array, 2, 4)); */

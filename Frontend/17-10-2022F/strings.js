@@ -31,31 +31,7 @@ console.log(helloLowerCase); */
 
 
 
-// Массивы - это упорядоченные данные
-// Базовый синтаксис
 
-//let arr = new Array();
-//let arr = [];
-//console.log(arr);
-/* 
-let fruits = [
-    'Apple', // index 0
-    'Orange', // index 1
-    'Melone' // index 2
-]
-let apple = fruits[0]; // Apple
-/* console.log(fruits);
-console.log(fruits.length);
-console.log(apple);
-console.log(fruits[1]);
-console.log(fruits[2]); */
-
-// можно заменить или добавить элемент к массиву
-/* fruits[2] = 'Pear';
-fruits[3] = 'Cherry';
-console.log(fruits); */
-
-// В массиве могут храниться элементы любого типа
 
 
 
