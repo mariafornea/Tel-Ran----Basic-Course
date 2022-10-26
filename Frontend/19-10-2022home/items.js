@@ -65,27 +65,47 @@ checkArray(arr3);
 
 /* (Необязательная задача) Напишите функцию которая будет принимать три массива с любыми данными и объединять их в один, новый массив и возвращать его. В зависимости от типа данных вы должны упорядочить данные. Сначала добавляйте только строки, затем цифры, затем булевы значения, все остальные значения могут быть в произвольном порядке добавлены далее. */
 
+/* function concatArr ( array1, array2, array3 ) {
+    let arrString = [];
+    let arrNumber = [];
+    let arrBoolean = [];
+    let arrMix = [];
+    let arrConcat = array1.concat(array2, array3); // сначала объединяю 3 массива в один
+    //console.log(arrConcat); // просто чтобы не прописывать для каждого в отдельности цикл
+    arrConcat.forEach(element => {
+        if (typeof element === 'number') {
+            arrNumber.push(element);
+        } else if (typeof element === 'string') {
+            arrString.push(element);
+        } else if (typeof element === 'boolean') {
+            arrBoolean.push(element);
+        } else {
+            arrMix.push(element);
+        }
+    })
+    let arrResult = arrString.concat(arrNumber, arrBoolean, arrMix); // объединяю все в один массив
+    console.log('\nРезультат --->');
+    console.log(arrResult);
+} */
 function concatArr ( array1, array2, array3 ) {
     let arrString = [];
     let arrNumber = [];
     let arrBoolean = [];
     let arrMix = [];
-    let arrConcat = [];
-    arrConcat = arrConcat.concat(array1, array2, array3); // сначала объединяю 3 массива в один
+    let arrConcat = array1.concat(array2, array3); // сначала объединяю 3 массива в один
     //console.log(arrConcat); // просто чтобы не прописывать для каждого в отдельности цикл
-    for ( let i = 0; i < arrConcat.length; i++ ) { // перебираю элементы по типу и сохраняю в разные массивы
-        if (typeof arrConcat[i] === 'number') {
-            arrNumber.push(arrConcat[i]);
-        } else if (typeof arrConcat[i] === 'string') {
-            arrString.push(arrConcat[i]);
-        } else if (typeof arrConcat[i] === 'boolean') {
-            arrBoolean.push(arrConcat[i]);
+    arrConcat.forEach(element => {
+        if (typeof element === 'number') {
+            arrNumber.push(element);
+        } else if (typeof element === 'string') {
+            arrString.push(element);
+        } else if (typeof element === 'boolean') {
+            arrBoolean.push(element);
         } else {
-            arrMix.push(arrConcat[i]);
+            arrMix.push(element);
         }
-    }
-    let arrResult = [];
-    arrResult = arrResult.concat(arrString, arrNumber, arrBoolean, arrMix); // объединяю все в один массив
+    })
+    let arrResult = arrString.concat(arrNumber, arrBoolean, arrMix); // объединяю все в один массив
     console.log('\nРезультат --->');
     console.log(arrResult);
 }
