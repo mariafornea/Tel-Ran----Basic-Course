@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Объекты </title>
+        <style>
+            h3 {
+                margin: 3% 0 2% 0;
+                color: darkblue;
+            }
+            .item {
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            .item_example {
+                border: 1px solid grey;
+                width: fit-content;
+                padding: 10px;
+                background-color: lightgray;
+            }
+            pre, .item_example {
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> Объекты. Домашнее задание 31.10.2022 </h1>
+        <h3>First item</h3>
+        <div class="item">
+            <p>Подсчёт количества свойств объекта. </p>
+            <p>Напишите функцию count(obj), которая возвращает количество свойств объекта:</p>
+            <div class='item_example'>
+                let user = { <br>
+                <pre>   name: 'John',</pre>
+                <pre>   age: 30</pre>
+                };<br>
+                console.log( count(user) ); // 2
+             </div>
+        </div>
+        <h3>Second item</h3>
+        <div class="item">
+            <p>Максимальная зарплата. </p>
+            <p>У нас есть объект salaries с зарплатами:</p>
+            <div class='item_example'>
+                let salaries = {<br>
+                <pre>   "John": 100, </pre>
+                <pre>   "Pete": 300, </pre>
+                <pre>   "Mary": 250 </pre>
+                 };                 
+            </div>
+            <p>Создайте функцию topSalary(salaries), которая возвращает имя самого высокооплачиваемого сотрудника.</p>
+            <p>Если объект salaries пустой, то нужно вернуть null.</p>
+        </div>
+    </body>
+    <script src="items.js"></script>
+</html>
