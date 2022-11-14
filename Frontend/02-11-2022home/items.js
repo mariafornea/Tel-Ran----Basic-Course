@@ -32,10 +32,17 @@ function isEqual (obj1, obj2) {
     }
     else return 'false';
 }
+
+/* function isEqualSimple (obj1, obj2) {
+    console.log(Boolean(obj1 == obj2)); 
+}
+ */
 console.log(isEqual(person1, person2));
 console.log(isEqual(person1, person3));
+/* console.log(isEqualSimple(person1, person2));
+console.log(isEqualSimple(person1, person3)); */
 
-// 2) испольую те же объекты
+// 2) испольую те же объекты (навеное это слишком длинное решение, но хотелось самостоятельно его придумать, в  этот раз без использование интернета. Но оно точно не подойдет в реальной практике, если я не буду точно знать названия свойств объектов. )
 
 function intersection (obj1, obj2) {
     if (obj1.firstName != obj2.firstName && obj1.lastName != obj2.lastName && obj1.age != obj2.age) {
