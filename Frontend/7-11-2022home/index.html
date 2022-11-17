@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Домашнее задание </title>
+        <link rel="stylesheet" href="myStyle.css"/>
+    </head>
+    <body>
+        <div class="item">1) Создайте кнопку в html при нажатию на которую в консоль выводится "привет".</div>
+        <button onclick = "alert('Привет')">Click me!</button>
+        <div class="item">2) Создайте блок в html с картинкой и кнопку. При нажатии на кнопку блок с картинкой должен получать border-radius 50px и overflow hidden. При нажатии второй раз на кнопку стили должны убираться и возвращаться к исходным. Реализуйте через classList.toggle()
+        </div>
+        <div class="img_button">
+            <div id="toggle"><img src="cat.svg"></div>
+            <button onclick="changeImage();">Change border</button>
+        </div>
+    </body>
+    <script src="items.js"></script>
+</html>

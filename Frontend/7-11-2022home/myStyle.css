@@ -1,0 +1,38 @@
+body {
+    background-color: #9cc495;
+}
+.item {
+    margin: 2% 0 2% 0;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    border: 3px solid rgb(98, 139, 27);
+    width: 40%;
+    padding: 10px;
+    background-color: #d6da1334;
+    border-radius: 10px;
+}
+button {
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(195, 224, 64);
+    border-color: rgb(98, 139, 27);
+    font-size: 17px;
+    font-style: italic;
+    cursor:grab;
+    margin-bottom: 5%;
+}
+.img_button{
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+}
+.img_button button {
+    width: max-content;
+}
+.img-FirstClick {
+    border-radius: 50px;
+    overflow: hidden;
+}
+.img-SecondClick, #toggle {
+    border: 4px solid rgb(98, 139, 27);
+    margin-bottom: 3%;
+}
