@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Домашнее задание </title>
+    </head>
+    <style>
+        .item {
+            border: 2px solid rgb(64, 83, 26);
+            width: 80%;
+            margin: 3% 0 5% 0;
+            padding: 15px;
+            background-color:rgba(131, 151, 91, 0.438);
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 16px;
+            line-height: 1.3;
+        }
+        .item_info {
+            font-style:italic;
+            margin-top: 2%;
+        }
+    </style>
+    <body>
+        <div class="item">1) Given an array arr[] of N elements, the challenge is to write a function to find a given element x in arr[] .
+            <div class="item_info">
+                Линейный поиск используется для поиска ключевого элемента среди нескольких элементов. Линейный поиск сегодня используется меньше, потому что он медленнее, чем бинарный поиск и хеширование.
+                Алгоритм:
+                <ul>
+                    <li>Шаг 1: Обход массива</li>
+                    <li>Шаг 2: Сопоставьте ключевой элемент с элементом массива</li>
+                    <li>Шаг 3: Если ключевой элемент найден, верните позицию индекса элемента массива.</li>
+                    <li>Шаг 4: Если ключевой элемент не найден, верните -1</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">2) Find the element that appears once in a sorted array
+            Given a sorted array in which all elements occur twice (one after the other) and one element appears only once.
+            <div class="item_info">
+                Простое решение состоит в обходе массива слева направо. Поскольку массив отсортирован, мы легко можем найти нужный элемент.
+                Алгоритм:
+                <ul>
+                    <li>Шаг 1: Обход массива через один элемент</li>
+                    <li>Шаг 2: Если элемент отличается от первого то мы нашли не задублированный элемент</li>
+                    <li>Шаг 3: Вернем элемент или позицию в массиве</li>
+                    <li>Шаг 4: Если ключевой элемент не найден, верните -1 или что то еще :)</li>
+                    <li>Шаг 5: Исправить ошибку ArrayIndexOutOfBoundsException</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>
