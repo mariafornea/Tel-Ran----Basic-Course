@@ -20,7 +20,7 @@ body {
     background-color:forestgreen;
     border: 2px solid black;
 }
-.box-2 {
+#box-2 {
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 1;
