@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Карточки товаров</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+        <div id="box-1">
+            <div class="myForm">
+                <table>
+                    <tr> <th>
+                        <input id="name" type="text" onfocus="this.value=''" placeholder="Название">
+                    </th> </tr>
+                    <tr> <th>
+                        <input id="price" type="text" onfocus="this.value=''" placeholder="Цена">
+                    </th> </tr>
+                    <tr> <th>
+                        <input id="amount" type="text" onfocus="this.value=''" placeholder="Колличество">
+                    </th> </tr>
+                </table>
+                <button onclick="switchPlace()">Добавить</button>
+            </div>
+        </div>
+        <div id="box-2"></div>
+        <div id="box-3"></div>
+        <div id="box-4"></div>
+        <div id="box-5"></div>
+        <div id="box-6"></div>
+        <div id="box-7"></div>
+        <div id="box-8">
+            <div id="priceFinish"></div>
+            <div id="amountFinish"></div>
+        </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

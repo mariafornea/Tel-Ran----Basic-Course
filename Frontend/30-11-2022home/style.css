@@ -1,0 +1,92 @@
+body {
+    background-color: rgb(231, 206, 175);
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: auto;
+    grid-row-gap: 1em;
+    width: 90%;
+    height: 90%;
+    margin: 2% 5% 2% 5%;
+}
+#box-1 {
+    height: 300px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+#box-2, #box-3, #box-4, #box-5, #box-6, #box-7 {
+    background-color: rgba(175, 175, 36, 0.678);
+    height: 70px;
+    width: 150px;
+    margin-left: 20%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    border: 1px solid black;
+    padding: 20px;
+}
+#box-2 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+#box-2::first-line, #box-3::first-line, #box-4::first-line, #box-5::first-line, #box-6::first-line, #box-7::first-line {
+    font-weight: bold;
+}
+#box-5 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 3;
+}
+#box-8 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    height: 70px;
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+.myForm {
+    background-color: rgb(131, 131, 17);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2% 0 3% 25%;
+    border: 1px solid rgba(175, 175, 36, 0.678);
+    border-radius: 20px;
+    height: 230px;
+}
+input {
+    height: 25px;
+    width: 480px;
+    border: none;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.801);
+    border-radius: 5px;
+    color: grey;
+    margin-top: 2%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+button {
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 200px;
+    height: 45px;
+    padding: 5px;
+    margin: 2% 0 2% 30%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    color: white;
+    background-color: rgb(131, 131, 17);
+    cursor:auto;
+}
