@@ -1,0 +1,326 @@
+db.createCollection('people')
+
+db.people.insertMany ([
+    {
+        id: 1,
+        firstName: 'Elizaveta',
+        lastName: 'Donskaya',
+        age: 35,
+        gender: 'f'
+    },
+    {
+        id: 2,
+        firstName: 'Anatoly',
+        lastName: 'Egorov',
+        age: 27,
+        gender: 'm'
+    },
+    {
+        id: 3,
+        firstName: 'Dmitry',
+        lastName: 'Miheev',
+        age: 34,
+        gender: 'm'
+    },
+    {
+        id: 4,
+        firstName: 'Semen',
+        lastName: 'Slepakov',
+        age: 45,
+        gender: 'm'
+    },{
+        id: 5,
+        firstName: 'Olga',
+        lastName: 'Rostova',
+        age: 30,
+        gender: 'f'
+    },
+    {
+        id: 6,
+        firstName: 'Anatoly',
+        lastName: 'Dolgorukov',
+        age: 47,
+        gender: 'm'
+    },
+    {
+        id: 7,
+        firstName: 'Emma',
+        lastName: 'Rotari',
+        age: 25,
+        gender: 'f'
+    },
+    {
+        id: 8,
+        firstName: 'Dmitry',
+        lastName: 'Lanskoy',
+        age: 45,
+        gender: 'm'
+    },
+    {
+        id: 9,
+        firstName: 'Sofia',
+        lastName: 'Zadorojnaya',
+        age: 18,
+        gender: 'f'
+    },
+    {
+        id: 10,
+        firstName: 'Artiom',
+        lastName: 'Bandorovskiy',
+        age: 23,
+        gender: 'm'
+    }
+])
+
+// db.people.drop()
+
+
+
+
+
+
+// -----------------------
+/* 1. Вывести данные о всех женщинах старше 30 лет */
+db.people.find ({
+    $and : [
+        { gender : 'f' },
+        { age : { $gt : 30 }}
+    ]
+})
+
+
+// Результат
+
+/* [
+  {
+    "_id": {
+      "$oid": "63c011236cdd0c787ae2f271"
+    },
+    "id": 1,
+    "firstName": "Elizaveta",
+    "lastName": "Donskaya",
+    "age": 35,
+    "gender": "f"
+  }
+] */
+
+
+
+
+
+
+
+// -----------------------
+/* 2. Вывести данные о всех женщинах и людях старше 30 лет */
+
+db.people.find ({
+    age : { $gt : 30}
+})
+
+// Результат
+
+/* [
+  {
+    "_id": {
+      "$oid": "63c011236cdd0c787ae2f271"
+    },
+    "id": 1,
+    "firstName": "Elizaveta",
+    "lastName": "Donskaya",
+    "age": 35,
+    "gender": "f"
+  },
+  {
+    "_id": {
+      "$oid": "63c011236cdd0c787ae2f273"
+    },
+    "id": 3,
+    "firstName": "Dmitry",
+    "lastName": "Miheev",
+    "age": 34,
+    "gender": "m"
+  },
+  {
+    "_id": {
+      "$oid": "63c011236cdd0c787ae2f274"
+    },
+    "id": 4,
+    "firstName": "Semen",
+    "lastName": "Slepakov",
+    "age": 45,
+    "gender": "m"
+  },
+  {
+    "_id": {
+      "$oid": "63c011236cdd0c787ae2f276"
+    },
+    "id": 6,
+    "firstName": "Anatoly",
+    "lastName": "Dolgorukov",
+    "age": 47,
+    "gender": "m"
+  },
+  {
+    "_id": {
+      "$oid": "63c011236cdd0c787ae2f278"
+    },
+    "id": 8,
+    "firstName": "Dmitry",
+    "lastName": "Lanskoy",
+    "age": 45,
+    "gender": "m"
+  }
+] */
+
+
+
+
+// -----------------------
+/* 3. Вывести данные о людях, чье имя входит в список: Anatoly, Dmitry, Semen, Olga */
+
+db.people.find({
+    firstName : { $in : ['Anatoly', 'Dmitry', 'Semen', 'Olga'] }
+})
+
+// Результат
+
+/* 
+[
+  {
+    "_id": {
+      "$oid": "63c011236cdd0c787ae2f272"
+    },
+    "id": 2,
+    "firstName": "Anatoly",
+    "lastName": "Egorov",
+    "age": 27,
+    "gender": "m"
+  },
+  {
+    "_id": {
+      "$oid": "63c011236cdd0c787ae2f273"
+    },
+    "id": 3,
+    "firstName": "Dmitry",
+    "lastName": "Miheev",
+    "age": 34,
+    "gender": "m"
+  },
+  {
+    "_id": {
+      "$oid": "63c011236cdd0c787ae2f274"
+    },
+    "id": 4,
+    "firstName": "Semen",
+    "lastName": "Slepakov",
+    "age": 45,
+    "gender": "m"
+  },
+  {
+    "_id": {
+      "$oid": "63c011236cdd0c787ae2f275"
+    },
+    "id": 5,
+    "firstName": "Olga",
+    "lastName": "Rostova",
+    "age": 30,
+    "gender": "f"
+  },
+  {
+    "_id": {
+      "$oid": "63c011236cdd0c787ae2f276"
+    },
+    "id": 6,
+    "firstName": "Anatoly",
+    "lastName": "Dolgorukov",
+    "age": 47,
+    "gender": "m"
+  },
+  {
+    "_id": {
+      "$oid": "63c011236cdd0c787ae2f278"
+    },
+    "id": 8,
+    "firstName": "Dmitry",
+    "lastName": "Lanskoy",
+    "age": 45,
+    "gender": "m"
+  }
+]
+*/
+
+
+
+
+
+// -----------------------
+/* 4. Вывести пользователей в возрасте от 30 до 40 (включая концы) */
+
+db.people.find({
+    age : { $gte : 30, $lte : 40 }
+})
+
+// Результат
+
+/* 
+[
+  {
+    "_id": {
+      "$oid": "63c011236cdd0c787ae2f271"
+    },
+    "id": 1,
+    "firstName": "Elizaveta",
+    "lastName": "Donskaya",
+    "age": 35,
+    "gender": "f"
+  },
+  {
+    "_id": {
+      "$oid": "63c011236cdd0c787ae2f273"
+    },
+    "id": 3,
+    "firstName": "Dmitry",
+    "lastName": "Miheev",
+    "age": 34,
+    "gender": "m"
+  },
+  {
+    "_id": {
+      "$oid": "63c011236cdd0c787ae2f275"
+    },
+    "id": 5,
+    "firstName": "Olga",
+    "lastName": "Rostova",
+    "age": 30,
+    "gender": "f"
+  }
+]
+*/
+
+
+
+
+
+// -----------------------
+/* 5. Вывести пользователя с идентификатором 3 */
+
+db.people.find({
+    id : 3
+})
+
+// Результат
+
+/*
+[
+  {
+    "_id": {
+      "$oid": "63c011236cdd0c787ae2f273"
+    },
+    "id": 3,
+    "firstName": "Dmitry",
+    "lastName": "Miheev",
+    "age": 34,
+    "gender": "m"
+  }
+]
+ */
